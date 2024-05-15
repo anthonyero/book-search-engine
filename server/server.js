@@ -31,11 +31,11 @@ const startApolloServer = async () => {
 
   // if we're in production, serve client/build as static assets
   if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist'))); // changed from build to 'dist'
+    app.use(express.static(path.join(__dirname, '../client/build'))); 
   
     // Wildcard route to redirect to index.html
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+      res.sendFile(path.join(__dirname, '../client/build/index.html'));
     });
   }
 
