@@ -8,8 +8,8 @@ const resolvers = {
 				return User.findOne({ _id: context.user._id }).populate('savedBooks');
 			}
 			throw AuthenticationError;
+		}
 	},
-
 	Mutation: {
 		addUser: async (parent, { username, email, password }) => {
 			const user = await User.create({ username, email, password });
