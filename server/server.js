@@ -5,7 +5,7 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const db = require('./config/connection');
 // Import typeDefs and resolvers once defined
-
+const { typeDefs, resolvers } = require('./schemas')
 // Import the authentication middleware
 const { authMiddleware } = require('./utils/auth');
 
